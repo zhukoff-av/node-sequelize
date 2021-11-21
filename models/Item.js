@@ -1,7 +1,7 @@
-const Sequelize = require('sequelize')
-const db = require('../config/database')
+const Sequelize = require('sequelize');
+const db = require('../config/database');
 
-const Item = db.define('item', {
+const Item = db.define('items', {
     title: {
         type: Sequelize.STRING
     },
@@ -17,6 +17,6 @@ const Item = db.define('item', {
     contact_email: {
         type: Sequelize.STRING
     }
-})
+});
 
-module.exports = Item
+module.exports = Item;

@@ -2,10 +2,11 @@ const express = require('express')
 const exhb = require('express-handlebars')
 const bodyParser = require('body-parser')
 const path = require('path')
-const Sequelize = require('sequelize')
+const sequelize = require('sequelize')
 
 // DB
 const db = require('./config/database')
+
 
 // test DB
 db.authenticate()
@@ -15,11 +16,8 @@ db.authenticate()
 const app = express()
 
 // Item routes
-// app.use('/items', require('./routes/items'))
+app.use('/items', require('./routes/items'))
 
-app.use('/items', (req, res) =>
-    res
-        .sendStatus(200))
 
 app.get('/', (req, res) => res.send('INDEX'))
 
